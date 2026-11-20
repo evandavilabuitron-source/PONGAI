@@ -8,12 +8,13 @@
                 background-color: #1a1a1a;
                 color: white;
                 font-family: Arial, sans-serif;
-                Display: flex;
+                display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 height: 100vh;
                 margin: 0;
+                gap: 12px;
             }
             h1 {
                 margin-bottom: 10px;
@@ -24,24 +25,80 @@
                 align-items: flex-start;
                 gap: 20px;
             }
+            #zona-juego {
+                position: relative;
+                width: 400px;
+                height: 600px;
+            }
             canvas {
                 border: 4px solid #ffffff;
                 background-color: #00e5ff;
+                box-sizing: border-box;
             }
-
+            #gameCanvas {
+                width: 400px;
+                height: 600px;
+                display: block;
+            }
             #neuralCanvas {
                 border: 2px solid #fff;
                 background-color: #1b0e0e;
+            }
+
+            #menu-inicio {
+                position: absolute;
+                inset: 0;
+                background-color: rgba(15, 23, 42, 0.88);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 16px;
+                text-align: center;
+                padding: 20px;
+                z-index: 10;
+            }
+            #controles {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+            }
+            button {
+                padding: 10px 16px;
+                font-size: 14px;
+                font-weight: bold;
+                cursor: pointer;
+                border: none;
+                border-radius: 6px;
+                background-color: #38bdf8;
+                color: #0f172a;
+            }
+            button:hover {
+                filter: brightness(1.1);
             }
         </style>
     </head>
     <body>
         <h1>PONG con IA</h1>
+        <div id="controles">
+            <span id="estado-texto">Modo: Menú</span>
+            <button id="btn-jugar">Jugar contra la IA</button>
+            <button id="btn-reiniciar">Reiniciar entrenamiento</button>
+            <button id="btn-menu">Menú</button>
+        </div>
         <div id="contenedor-principal">
-            <canvas id="gameCanvas" width="400" height="600"></canvas>
+            <div id="zona-juego">
+                <div id="menu-inicio">
+                    <h2>Pong con Neuroevolución</h2>
+                    <p>Primero entrena a la IA por generaciones y luego compite contra ella</p>
+                    <button id="btn-entrenar">Empezar entrenamiento</button>
+                </div>
+                <canvas id="gameCanvas" width="400" height="600"></canvas>
+            </div>
             <canvas id="neuralCanvas" width="250" height="600"></canvas>
         </div>
 
+        <script src="neural.js"></script>
         <script src="game.js"></script>
     </body>
 </html>
