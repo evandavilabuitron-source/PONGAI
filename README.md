@@ -1,2 +1,2 @@
-the game starts inmediatly as you open it, you have to use left and right arrows to move the bar from below while the one upside is the ai that learns from neuroevolution
-Also this PONG game is not usuall, THE BALL TURNS INVISIBLE, so youll have to learn how to predict the balls position too
+REEEEEEAALLY sorry for all the previos mistakes, i tried my best to make an actuall AI this time
+NOW it has a very simple menu were you can chose to train the AI before playing against it in INVISIBALL PONG
